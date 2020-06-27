@@ -9,7 +9,7 @@ import matplotlib.cm as cm
 
 
 
-def color_map(value):
+def color_map(value, cmap_name):
     norm = plt.Normalize(0, 1)
     norm = matplotlib.colors.Normalize(vmin=0, vmax=1)
     cmap = cm.get_cmap(cmap_name)  # PiYG
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     values = [	0.0030, 0.2997 , 0.0002 , -0.9131 , 0.913, 1 , -1, 0 ]
     values = [num/100 for num in range(1, 100)]
     for val in values:
-        c = color_map(abs(val))
+        c = color_map(abs(val), cmap_name)
         print(c)
         html = html_string.format(color=c, text=val )
         file.write(html)
