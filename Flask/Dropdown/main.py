@@ -22,7 +22,7 @@ def index():
     if request.method == 'POST':
         value = form.value.data
         print(value)
-        return '<h1>Instrument : {}</h1>'.format(value)
+        return '<h1>Value : {}</h1>'.format(value)
     return render_template('index.html', form=form)
 
 
