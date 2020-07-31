@@ -1,0 +1,170 @@
+<html>
+<head>
+    <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+<link rel="icon" href="data:,">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+<style>
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
+
+
+
+body {
+width: 2700px;
+ height: 4200px;
+   overflow-y: scroll;
+   overflow-x: hidden; /* hides the horizontal scroll bar */
+   line-height : normal !important ;
+     padding: 15px !important;
+}
+
+caption {
+    padding: 10px;
+    caption-side: top
+}
+#element_form1 {  display:inline-block; margin-left:20px; width:500px;}
+#element_form2 {  display:inline-block; }
+</style>
+
+</head>
+<body>
+
+
+
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link "  role="link" href="/">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="about">about</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="Page 1" role="link">Page 1</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" href="Page 2">Page 2</a>
+  </li>
+  <li class="nav-item">
+       <a class="nav-link active" href="Page 3-2">Page 3</a>
+
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" href="Page 4">Page 4</a>
+  </li>
+       <li class="nav-item">
+    <a class="nav-link" href="/Page 5 tab1-1">Page 5</a>
+  </li>
+
+</ul>
+
+<div class="tab-content">
+			<p>This is the content for tab 1.</p>
+
+			<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" >
+			  <li class="nav-item" > <a class="nav-link " data-toggle="pill" href="Page 3-1" role="tab" aria-controls="pills-home" aria-selected="true">Subtab One</a></li>
+                <li class="nav-item" > <a class="nav-link active" data-toggle="pill" href="Page 3-2" role="tab" aria-controls="pills-home" aria-selected="true">Subtab Two</a></li>
+
+			</ul>
+
+
+
+        </div>
+
+
+ <p>Flask test Dashboard</p>
+ <form method="post" >
+
+<div id="element_form1">
+
+
+  <div class="row">
+
+
+
+
+  </div>
+
+
+
+  <div class="row">
+
+   <label style="margin-top:8px; font-size:1rem;">Input: </label>
+      <div class="row">
+
+        <div class="col">
+
+             <div class="form-group col-md-4">
+
+                <input class="btn btn-primary" type="submit" value="Update Values">
+
+            </div>
+          </div>
+       </div>
+
+  </div>
+
+
+</div>
+</form>
+
+<script>
+
+
+value2_select = document.getElementById('value2');
+value2_select.value = value2_select.options[value2_select.options.length - 1].value;
+
+</script>
+
+<script>
+
+
+// Dynamic Select, default = last element
+let value1_select = document.getElementById('value1');
+let value2_select = document.getElementById('value2');
+
+value1_select.onchange = function() {
+    value1 = value1_select.value;
+    alert(value1);
+     fetch('/' + value1).then(function(response) {
+        response.json().then(function(data) {
+              alert(data);
+                     let optionHTML = '';
+                     for(let value2 of data.data1){
+                        optionHTML += '<option value="' + value2 +'">' + value2 + '</option>';
+                        }
+
+
+                value2_select.innerHTML = optionHTML;
+             value2_select.value = value2_select.options[value2_select.options.length - 1].value;
+                    //    alert(value2_select.options[value2_select.options.length - 1].value);
+
+            });
+        });
+      }
+
+
+
+</script>
+ <div style="  margin-left: 20px;  " >
+
+
+     {% if text %}
+    <p> {{ text }}</p>
+{% else %}
+    <p> Empty Page 1 </p>
+{% endif %}
+
+
+
+{% if bokS %}
+    {{ bokS|indent(4)|safe }}
+{% else %}
+    <p> Empty Page</p>
+{% endif %}
+     </div>
+</body>
+</html>
