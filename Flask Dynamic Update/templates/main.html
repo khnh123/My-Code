@@ -27,23 +27,6 @@ width: 2700px;
 #element_form1 {  display:inline-block; margin-left:20px; width:500px;}
 #element_form2 {  display:inline-block; }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </style>
     <script type="text/javascript"
             src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
@@ -67,18 +50,6 @@ function startTimer(duration, display) {
         }
     }, 1000);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
     </script>
     <script type="text/javascript">
@@ -105,6 +76,7 @@ var intervalID = setInterval(update_values, interval_val);
     }
 
 
+    
     </script>
     <script type="text/javascript">
 var interval_val2 = {{interval2 }};
@@ -128,6 +100,7 @@ var intervalID2 = setInterval(update_values2, interval_val2);
     }
 
 
+    
     </script>
 </head>
 
@@ -154,7 +127,7 @@ var intervalID2 = setInterval(update_values2, interval_val2);
 <div style="  margin-left: 20px; width:1100.5px;">
     <div class="card" style="background: None;">
         <div class="card-body" style="background: None; padding-bottom: 15px !important; padding-top: 15px !important;">
-            <p style="  margin-left: -10px;" >*need to reload the page to update this Text Box (Card) </p>
+            <p style="  margin-left: -10px;">*need to reload the page to update this Text Box (Card) </p>
 
             {% if status %}
             <li style="list-style-type:none; margin-left: -10px;">
@@ -215,6 +188,7 @@ var intervalID2 = setInterval(update_values2, interval_val2);
 
 
 
+                            
                             </script>
                             <button onclick="stopTextColor();">Stop</button>
                     </text>
@@ -237,6 +211,7 @@ var intervalID2 = setInterval(update_values2, interval_val2);
 
 
 
+                        
                         </script>
                         seconds
                     </text>
@@ -278,6 +253,7 @@ var intervalID2 = setInterval(update_values2, interval_val2);
                             // useless
                        var res =  document.getElementById("result_perpetual").innerHTML;
                          document.write(res);
+                            
                             </script>
                             <button onclick="stopTextColor();">Stop</button>
                     </text>
@@ -290,6 +266,7 @@ var intervalID2 = setInterval(update_values2, interval_val2);
                         <script type="text/javascript">
                 document.write({{interval2 }} /1000)
 
+                        
                         </script>
                         seconds
                     </text>
